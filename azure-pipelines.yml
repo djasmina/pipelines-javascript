@@ -37,3 +37,4 @@ steps:
 - script: sudo yarn install
 - script: sudo apt install npm
 - script: sudo npm run compile
+- script: tsc --target ES6 --strict true --project tsconfigs/production.json
