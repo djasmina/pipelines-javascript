@@ -7,15 +7,29 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-16.04'
+strategy:
+  matrix:
+    node_8_x:
+      node_version: 8.12.0
+    node_9_x:
+      node_version: 9.6.0
 
 steps:
+- task: NodeTool@0 
+  inputs:
+    versionSpec: $(node_version)
+
+- script: npm install
 - task: NodeTool@0
   inputs:
     versionSpec: '10.16.2'
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
-    npm run build
+    sudo npm install
+    sudo npm run build
   displayName: 'npm install and build'
+
+- script: sudo npm install --only=dev
+- script: sudo npx mocha
