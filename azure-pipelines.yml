@@ -36,4 +36,4 @@ steps:
 - script: sudo npm install
 - script: sudo yarn install
 - script: sudo npm install compile-run --save
-- script: tsc --target ES6 --strict true --project tsconfigs/production.json
+- script: mocha test --reporter mocha-junit-reporter
