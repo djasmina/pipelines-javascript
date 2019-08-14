@@ -51,5 +51,11 @@ steps:
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
 
-- script: webpack
-- script: npm run build
+- script: |
+    npm install -g @angular/cli
+    npm install
+    ng build --prod
+
+- script: |
+    npm install webpack webpack-cli --save-dev
+    npx webpack --config webpack.config.js
