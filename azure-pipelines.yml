@@ -52,9 +52,8 @@ steps:
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
 
 
-
+- script: sudo npm audit fix
 - script: |
-    sudo npm audit fix
     sudo npm install -g @angular/cli
     sudonpm install
     sudo ng build --prod
