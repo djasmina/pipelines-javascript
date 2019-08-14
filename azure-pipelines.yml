@@ -54,7 +54,7 @@ steps:
 - script: |
     sudo npm install -g @angular/cli
     sudo npm install
-    sudo ng build --prod
+    ng build --prod
 
 - script: |
     sudo npm install webpack webpack-cli --save-dev
