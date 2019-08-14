@@ -53,6 +53,7 @@ steps:
 
 
 
-- script: |
+- script: 
+    sudo npm audit fix
     sudo npm install webpack webpack-cli --save-dev
     sudo npx webpack --config webpack.config.js
