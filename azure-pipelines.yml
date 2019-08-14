@@ -38,3 +38,9 @@ steps:
 - script: sudo npm install compile-run --save
 - script: sudo npm install mocha-junit-reporter --save-dev
 - script: npm test
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/TEST-RESULTS.xml'
