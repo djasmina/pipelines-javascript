@@ -55,7 +55,7 @@ steps:
 - script: sudo npm audit fix
 - script: |
     sudo npm install -g @angular/cli
-    sudonpm install
+    sudo npm install
     sudo ng build --prod
 - script: 
     sudo npm audit fix
