@@ -53,10 +53,12 @@ steps:
 
 
 
+- script: |
+    sudo npm audit fix
+    sudo npm install -g @angular/cli
+    sudonpm install
+    sudo ng build --prod
 - script: 
     sudo npm audit fix
     sudo npm install webpack webpack-cli --save-dev
     sudo npx webpack --config webpack.config.js
-    sudo npm install -g @angular/cli
-    sudo npm install
-    sudo ng build --prod
