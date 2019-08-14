@@ -32,4 +32,4 @@ steps:
   displayName: 'npm install and build'
 
 - script: sudo npm install --only=dev
-- script: sudo npx mocha
+- script: npx mocha
