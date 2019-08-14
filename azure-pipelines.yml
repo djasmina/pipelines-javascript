@@ -36,4 +36,5 @@ steps:
 - script: sudo npm install
 - script: sudo yarn install
 - script: sudo npm install compile-run --save
+- script: sudo npm install mocha-junit-reporter --save-dev
 - script: mocha test --reporter mocha-junit-reporter
