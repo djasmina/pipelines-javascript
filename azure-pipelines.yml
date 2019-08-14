@@ -32,3 +32,6 @@ steps:
   displayName: 'npm install and build'
 
 - script: sudo npm install --only=dev
+- script: sudo npm install -g @angular/cli
+- script: sudo npm install
+
