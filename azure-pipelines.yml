@@ -34,4 +34,7 @@ steps:
 - script: sudo npm install --only=dev
 - script: sudo npm install -g @angular/cli
 - script: sudo npm install
+- script: sudo yarn install
+- script: sudo npm run compile
+- script: tsc --target ES6 --strict true --project tsconfigs/production.json
 
