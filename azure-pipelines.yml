@@ -52,10 +52,10 @@ steps:
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
 
 - script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
+    sudo npm install -g @angular/cli
+    sudo npm install
+    sudo ng build --prod
 
 - script: |
-    npm install webpack webpack-cli --save-dev
-    npx webpack --config webpack.config.js
+    sudo npm install webpack webpack-cli --save-dev
+    sudo npx webpack --config webpack.config.js
