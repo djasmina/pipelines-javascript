@@ -32,4 +32,3 @@ steps:
   displayName: 'npm install and build'
 
 - script: sudo npm install --only=dev
-- script: npx mocha
