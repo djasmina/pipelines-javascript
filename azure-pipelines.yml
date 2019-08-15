@@ -63,7 +63,10 @@ steps:
     sudo npm audit fix
     sudo npm install webpack webpack-cli --save-dev
     sudo npx webpack --config webpack.config.js
+
 - task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
 
 
 - task: ArchiveFiles@2
