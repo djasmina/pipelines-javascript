@@ -53,8 +53,8 @@ steps:
 
 
 - script: |
+    sudo npm audit fix --force
     sudo npm install -g @angular/cli
-    sudo npm audit fix
     sudo npm install
     sudo ng build --prod
 - script: 
