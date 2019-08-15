@@ -64,11 +64,20 @@ steps:
     sudo npm install webpack webpack-cli --save-dev
     sudo npx webpack --config webpack.config.js
     
-- script: sudo npm install -g grunt-cli
-- script: sudo npm install grunt-contrib-jshint --save-dev
-- script: grunt
-- task: npmAuthenticate@0
+- task: PublishBuildArtifacts@1
   inputs:
-    customEndpoint: npm-connection-name
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: |
+      **\*.js
+      package.json
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- script: grunt
+- task: PublishBuildArtifacts@1
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
