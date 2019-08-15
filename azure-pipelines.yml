@@ -63,7 +63,8 @@ steps:
     sudo npm audit fix
     sudo npm install webpack webpack-cli --save-dev
     sudo npx webpack --config webpack.config.js
-
+    
+- script: sudo npm install -g grunt-cli
 - script: sudo npm install grunt-contrib-jshint --save-dev
 - script: grunt
 - task: npmAuthenticate@0
