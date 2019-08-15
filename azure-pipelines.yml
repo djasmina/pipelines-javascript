@@ -58,7 +58,6 @@ steps:
     sudo npm install
     ng new PROJECT-NAME
     cd PROJECT-NAME
-    ng serve
     sudo ng build --prod
 - script: 
     sudo npm audit fix
